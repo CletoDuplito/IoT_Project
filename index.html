@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>AJAX</h2>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="device"></p>
+<hr>
+<p id="demo"></p>
+
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+  };
+xhttp.open("GET", "https://api.aercloud.aeris.com/v1/{accountId}/scls/{deviceId}}/containers/{containerId}}/contentInstances?apiKey={apiKey}}&dataFormat=jsonRaw", false);
+  xhttp.send();
+
+  var responseTxt = xhttp.responseText;
+  var responseJson = JSON.parse(responseTxt);
+  document.getElementById("demo").innerHTML = responseTxt;
+  document.getElementById("device").innerHTML = responseJson.contentInstances[0].content.contentTypeBinary.deviceId;
+  
+}
+</script>
+
+</body>
+</html>
+
