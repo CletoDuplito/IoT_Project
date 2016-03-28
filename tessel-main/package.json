@@ -1,0 +1,17 @@
+{
+  "name": "tessel-proj",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "ambient-attx4": "^0.2.8",
+    "camera-vc0706": "^0.1.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
